@@ -102,3 +102,105 @@
     font-size: 12px;
   }
 }
+
+/* TIC-TAC-TOE STYLES */
+
+.ttt-title {
+  font-size: 2.3rem;
+  letter-spacing: 0.06em;
+  font-family: inherit;
+  font-weight: 700;
+  margin-bottom: 14px;
+  margin-top: 12px;
+}
+
+/* Center the game board & controls */
+.ttt-board {
+  margin: 0 auto 24px auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(65px, 90px));
+  grid-template-rows: repeat(3, minmax(65px, 90px));
+  gap: 8px;
+  justify-content: center;
+  background: transparent;
+  max-width: 290px;
+  user-select: none;
+}
+
+.ttt-square {
+  border: 2px solid var(--border-color);
+  border-radius: 14px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 2.2rem;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+  transition: border 0.2s, background 0.2s, color 0.15s;
+  height: 80px;
+  width: 80px;
+  box-shadow: 0 2px 6px rgba(45, 56, 87, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ttt-square:active {
+  background: var(--bg-secondary);
+  opacity: 0.87;
+}
+
+.ttt-square[aria-label="empty"] {
+  color: var(--border-color);
+}
+
+.ttt-reset-btn {
+  margin-top: 18px;
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 9px;
+  padding: 13px 28px;
+  font-size: 1.07rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: background 0.2s, color 0.2s, box-shadow 0.18s;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+}
+
+.ttt-reset-btn:hover,
+.ttt-reset-btn:focus {
+  background: var(--text-secondary);
+  color: var(--button-bg);
+  outline: none;
+}
+
+.ttt-footer {
+  margin-top: 36px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .ttt-board {
+    grid-template-columns: repeat(3, minmax(45px, 65px));
+    grid-template-rows: repeat(3, minmax(45px, 65px));
+    gap: 6px;
+    max-width: 220px;
+  }
+  .ttt-square {
+    font-size: 1.55rem;
+    height: 53px;
+    width: 53px;
+  }
+  .ttt-title {
+    font-size: 1.45rem;
+  }
+}
+
+/* Hide visually unnecessary outlines for a minimal look */
+.ttt-square:focus {
+  outline: 2px solid var(--button-bg);
+  outline-offset: 1px;
+}
+
